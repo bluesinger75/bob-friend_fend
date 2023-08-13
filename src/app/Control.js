@@ -5,7 +5,7 @@ import { useParams,useRouter } from 'next/navigation';
 export function Control() {
   const params = useParams();
   const router = useRouter();
-  console.log("dfdadafs")
+
   const id = params.id;
   return (
     <ul>

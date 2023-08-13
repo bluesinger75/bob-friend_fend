@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import './globals.css'
 import { Control } from './Control';
-import { Youtube } from './youtube';
+import { Youtube } from './Youtube';
 
 export const metadata = {
   title: 'Bob Friend',
@@ -19,22 +19,14 @@ export default async function RootLayout({ children }) {
     <html>
       <body>
         <h1><a href='/'>WEB</a></h1>
-        {/* <ol>
-          {topics.map((topic)=>{
-            return <li key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
-          })}
+        <ol>
+          {videos.map((video)=>{
+                return <li key={video.etag}>{video.snippet.title}</li>
+              })}
         </ol>
           {children}
           <Control/>
-          <Youtube/> */}
-
-          {
-            <ol>
-              {videos.map((video)=>{
-                return <li key={video.etag}>{video.snippet.title}</li>
-              })}
-            </ol>
-          }
+          <Youtube/>
       </body>
     </html>
   )
