@@ -1,3 +1,13 @@
 h1 a {
   text-decoration: none;
 }
+
+.navbar {
+  background: white;
+  padding: 20px;
+}
+
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+}

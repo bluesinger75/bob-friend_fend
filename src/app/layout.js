@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import './globals.css'
-import { Control } from './Control';
-import { Youtube } from './Youtube';
+import { Control } from './Control'
+import { Youtube } from './youtube/page'
 
 export const metadata = {
   title: 'Bob Friend',
@@ -11,22 +11,18 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+'/topics', { cache: 'no-store' });
   // const topics = await resp.json();
-  const video = await fetch(process.env.BACKEND_API_URL+'/api/youtube-lists', { cache: 'no-store' });
-  const videos = await video.json();
+  // const video = await fetch(process.env.BACKEND_API_URL+'/api/youtube-lists', { cache: 'no-store' });
+  // const videos = await video.json();
   
 
   return (
     <html>
       <body>
-        <h1><a href='/'>WEB</a></h1>
-        <ol>
-          {videos.map((video)=>{
-                return <li key={video.etag}>{video.snippet.title}</li>
-              })}
-        </ol>
-          {children}
-          <Control/>
-          <Youtube/>
+        <div className='navbar'>
+          <Link href='/'>Home</Link>
+          <Link href='/youtube'>Youtube</Link>
+        </div>
+        {children}
       </body>
     </html>
   )
