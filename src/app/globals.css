@@ -1,13 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 h1 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .navbar {
-  background: white;
-  padding: 20px;
+    background: white;
+    padding: 20px;
 }
 
 .navbar a {
-  margin-right: 10px;
-  text-decoration: none;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.video-title-link {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 320px;
+  }
+
+.thumbnail {
+    border-radius: 10px;
+}
+
+.channelTitle {
+    color: gray;
+}
+
+.content {
+    float: left;
+    margin: 10px;
+    height: 220px;
+}
+
+.details {
+    /* display: flex; */
 }

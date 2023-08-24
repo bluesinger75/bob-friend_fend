@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import './globals.css'
-import { Control } from './Control'
-import { Youtube } from './youtube/page'
 
 export const metadata = {
   title: 'Bob Friend',
@@ -9,18 +7,31 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  // const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+'/topics', { cache: 'no-store' });
-  // const topics = await resp.json();
-  // const video = await fetch(process.env.BACKEND_API_URL+'/api/youtube-lists', { cache: 'no-store' });
-  // const videos = await video.json();
-  
 
   return (
     <html>
       <body>
         <div className='navbar'>
-          <Link href='/'>Home</Link>
-          <Link href='/youtube'>Youtube</Link>
+
+		<nav className="flex sm:justify-center space-x-4">
+			{[
+				['인기 급상승', `/youtube/trending`],
+				['방송', `/youtube/film`],
+				['음악', `/youtube/music`],
+				['팻 & 동물', `/youtube/animals`],
+				['스포츠', `/youtube/sports`],
+				['게임', `/youtube/gaming`],
+				['코메디', `/youtube/comedy`],
+				['방송', `/youtube/entertainment`],
+				['뉴스', `/youtube/news`],
+				['과학 & 테크', `/youtube/tech`],
+			].map(([title, url]) => (
+				<Link href={url} className="rounded-lg 
+											px-3 py-2 text-slate-700 font-medium 
+											hover:bg-indigo-100 hover:text-slate-900">{title}</Link>
+			))}
+			</nav>
+			
         </div>
         {children}
       </body>
